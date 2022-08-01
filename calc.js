@@ -41,6 +41,11 @@ for (let button of buttons) {
             case "equals":
                 displayOperation();
                 break;
+            case "C":
+                clearData();
+                break;
+            case "CE":
+                correctError();
         }
     })
 }
@@ -73,7 +78,18 @@ function replaceOperator(operator) {
 function displayOperation() {
     topDisplay.textContent += ` ${bottomDisplay.textContent}`;
     let [num1, op, num2] = topDisplay.textContent.split(" ");
-    bottomDisplay.textContent = operate(currentOperator, +num1, +num2);
+    bottomDisplay.textContent =
+        Math.round(operate(currentOperator, +num1, +num2) * 10000000) / 10000000;
     topDisplay.textContent += " =";
     currentOperator = null;
+}
+
+function clearData() {
+    currentOperator = null;
+    topDisplay.textContent = null;
+    bottomDisplay.textContent = 0;
+}
+
+function correctError() {
+    bottomDisplay.textContent = 0;
 }
