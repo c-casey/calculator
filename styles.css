@@ -16,7 +16,7 @@ body {
     /* height: 100vh; */
     background-color: #dad2ba;
     border-radius: 4px;
-    box-shadow: 0 10px 3px 3px #7b7368;
+    box-shadow: 0 10px 3px 3px #7b7368, 0 0 3px 0px #7b7368 inset;
     background-image: linear-gradient(180deg, #dad2ba, #dad2ba, #c7c0a7)
 }
 
@@ -33,19 +33,21 @@ body {
     /* text-shadow: 1; */
 }
 
-.button.data {
+.button[type="CE"],
+.button[type="C"],
+.button[type="equals"] {
     background-color: #e28f83;
     background-image: linear-gradient(150deg, #e28f83, #e28f83, #f29f93);
     font-weight: 800;
 
 }
 
-.button.number {
+.button[type="number"] {
     background-color: #321f2f;
     background-image: linear-gradient(150deg, #321f2f, #321f2f, #424f4f)
 }
 
-.button.operator {
+.button[type="operator"] {
     background-color: #cdc0b0;
     background-image: linear-gradient(150deg, #cdc0b0, #cdc0b0, #ddd0c0);
     font-size: 30px;
@@ -74,12 +76,12 @@ body {
     grid-row: 2;
     background-color: #303030;
     border-radius: 5px;
+    box-shadow: 0 0 4px 1px #707070 inset;
     padding: 10px 30px;
     text-align: right;
     font-family: 'Unica One', cursive;
-    font-weight: 100;
     color: lightpink;
-    text-shadow: 0 0 4px red, 0 0 4px red, 0 0 8px red;
+    text-shadow: 0 0 4px red, 0 0 4px red, 0 0 20px red;
 }
 
 #screen-top {
@@ -87,7 +89,7 @@ body {
 }
 
 #screen-bottom {
-    font-size: 24px;
+    font-size: 28px;
     bottom: 0;
 }
 
