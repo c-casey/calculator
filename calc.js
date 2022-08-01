@@ -1,4 +1,7 @@
-let currentOperator;
+let topDisplay = document.querySelector("#screen-top");
+let bottomDisplay = document.querySelector("#screen-bottom");
+let buttons = document.querySelectorAll(".button");
+let currentOperator = null;
 
 function add(a, b) { return a + b; }
 
@@ -24,7 +27,6 @@ function operate(operator, a, b) {
     }
 }
 
-let buttons = document.querySelectorAll(".button");
 for (let button of buttons) {
     button.addEventListener("click", () => {
         let id = button.getAttribute("id");
@@ -43,7 +45,6 @@ for (let button of buttons) {
     })
 }
 
-let bottomDisplay = document.querySelector("#screen-bottom");
 function printNumber(n) {
     if (n === "dec") {
         bottomDisplay.textContent = bottomDisplay.textContent + 0.0; //TODO: return float
@@ -52,7 +53,6 @@ function printNumber(n) {
     }
 }
 
-let topDisplay = document.querySelector("#screen-top");
 function migrateValues(operator) {
     if (currentOperator && bottomDisplay.textContent === "0") {
         replaceOperator(operator);
@@ -71,9 +71,9 @@ function replaceOperator(operator) {
 }
 
 function displayOperation() {
-    topDisplay.textContent = `${topDisplay.textContent} ${bottomDisplay.textContent}`;
+    topDisplay.textContent += ` ${bottomDisplay.textContent}`;
     let [num1, op, num2] = topDisplay.textContent.split(" ");
     bottomDisplay.textContent = operate(currentOperator, +num1, +num2);
-    topDisplay.textContent = `${topDisplay.textContent} =`;
+    topDisplay.textContent += " =";
     currentOperator = null;
 }
