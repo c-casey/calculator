@@ -42,7 +42,8 @@ body {
 
 }
 
-.button[type="number"] {
+.button[type="number"],
+.button[type="decimal"] {
     background-color: #321f2f;
     background-image: linear-gradient(150deg, #321f2f, #321f2f, #424f4f)
 }
