@@ -58,10 +58,10 @@ for (let button of buttons) {
 
 function printNumber(n) {
     if (errorFlag) return;
-    else if (topDisplay.textContent.search("=") > -1) {
+    else if (topDisplay.textContent.includes("=")) {
         clearData();
     };
-    (bottomDisplay.textContent == 0) ? bottomDisplay.textContent = n
+    (bottomDisplay.textContent === "0") ? bottomDisplay.textContent = n
     : bottomDisplay.textContent += n;
 }
 
@@ -119,7 +119,7 @@ function correctError() {
 }
 
 function insertDecimal() {
-    if (errorFlag) return;
+    if (errorFlag || bottomDisplay.textContent.includes(".")) return;
     bottomDisplay.textContent += ".";
 }
 
