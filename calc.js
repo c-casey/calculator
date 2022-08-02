@@ -58,6 +58,9 @@ for (let button of buttons) {
 
 function printNumber(n) {
     if (errorFlag) return;
+    else if (topDisplay.textContent.search("=") > -1) {
+        clearData();
+    };
     (bottomDisplay.textContent == 0) ? bottomDisplay.textContent = n
     : bottomDisplay.textContent += n;
 }
