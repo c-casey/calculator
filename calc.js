@@ -28,14 +28,6 @@ function operate(operator, a, b) {
     }
 }
 
-//TODO: convert switch statement to external callback function
-//(NOTE: OR switch to assign only the relevant function to each button?)
-for (let button of buttons) {
-    button.addEventListener("click", function(button) {
-        handleInput(button.target);
-    });
-};
-
 function handleInput(button) {
     let id = button.getAttribute("id");
     let buttonType = button.getAttribute("type");
@@ -147,8 +139,31 @@ function printErrorDialogue(flag) {
             bottomDisplay.textContent = "DON'T #E FOOLISH";
             break;
         case 6:
-            topDisplay.textContent = "$UI% W*ILE Y%U'RE AHE^D";
-            bottomDisplay.textContent = "DO^'T #E FO$LIS%";
-            break; //TODO: implement puzzle type thing, TIS-100 style
+            topDisplay.textContent = "$UI^ W*ILE Y)U'RE AHE%D";
+            bottomDisplay.textContent = "DO^'T %E FO$LIS*";
+            break;
+        case 7:
+            topDisplay.textContent = "&UI# W^I!E Y%U/RE$*HE^D";
+            bottomDisplay.textContent = "DO/%T #E FO$(IS%";
+            break;
+        case 8:
+            topDisplay.textContent = "#U)^/W&I@E=Y,+%R-^)HE$D";
+            bottomDisplay.textContent = "_O=?T (E+#O&*IS.";
+            break;
     };
 }
+
+for (let button of buttons) {
+    button.addEventListener("click", function(button) {
+        handleInput(button.target);
+    });
+};
+
+document.addEventListener("keypress", (e) => {
+    let key = e.key;
+    let buttonMatch = document.querySelector(`.button[data_key~="${key}"]`);
+    console.log(buttonMatch);
+    if (buttonMatch) {
+        handleInput(buttonMatch);
+    };
+});
