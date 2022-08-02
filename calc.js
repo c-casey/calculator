@@ -31,29 +31,33 @@ function operate(operator, a, b) {
 //TODO: convert switch statement to external callback function
 //(NOTE: OR switch to assign only the relevant function to each button?)
 for (let button of buttons) {
-    button.addEventListener("click", () => {
-        let id = button.getAttribute("id");
-        let buttonType = button.getAttribute("type");
-        switch (buttonType) {
-            case "number":
-                printNumber(id);
-                break;
-            case "decimal":
-                insertDecimal();
-                break;
-            case "operator":
-                migrateValues(id);
-                break;
-            case "equals":
-                displayOperation();
-                break;
-            case "C":
-                clearData();
-                break;
-            case "CE":
-                correctError();
-        };
-    })
+    button.addEventListener("click", function(button) {
+        handleInput(button.target);
+    });
+};
+
+function handleInput(button) {
+    let id = button.getAttribute("id");
+    let buttonType = button.getAttribute("type");
+    switch (buttonType) {
+        case "number":
+            printNumber(id);
+            break;
+        case "decimal":
+            insertDecimal();
+            break;
+        case "operator":
+            migrateValues(id);
+            break;
+        case "equals":
+            displayOperation();
+            break;
+        case "C":
+            clearData();
+            break;
+        case "CE":
+            correctError();
+    };
 }
 
 function printNumber(n) {
