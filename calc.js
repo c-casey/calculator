@@ -4,13 +4,13 @@ let buttons = document.querySelectorAll(".button");
 let currentOperator = null;
 let errorFlag = 0;
 
-function add(a, b) {return a + b}
+function add(a, b) { return a + b; }
 
-function subtract(a, b) {return a - b}
+function subtract(a, b) { return a - b; }
 
-function multiply(a, b) {return a * b}
+function multiply(a, b) { return a * b }
 
-function divide(a, b) {return a / b}
+function divide(a, b) {return a / b }
 
 function operate(operator, a, b) {
     switch(operator) {
@@ -25,7 +25,7 @@ function operate(operator, a, b) {
             break;
         case "/":
             return divide(a, b);
-    };
+    }
 }
 
 function handleInput(button) {
@@ -92,7 +92,7 @@ function displayOperation() {
         bottomDisplay.textContent = "ERROR: DIVISION BY ZERO";
         errorFlag = 1;
         return;
-    };
+    }
     bottomDisplay.textContent =
         Math.round(operate(currentOperator, +num1, +num2) * 10000000) / 10000000;
     topDisplay.textContent += " =";
