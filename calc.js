@@ -88,8 +88,8 @@ function displayOperation() {
     topDisplay.textContent += ` ${bottomDisplay.textContent}`;
     let [num1, op, num2] = topDisplay.textContent.split(" ");
     if (op === "/" && num2 === "0") {
-        topDisplay.textContent = "YOU'VE DOOMED US ALL";
-        bottomDisplay.textContent = "ERROR: DIVISION BY ZERO";
+        topDisplay.textContent = "YOU'VE DOOMED US ALL"; //max chars 26
+        bottomDisplay.textContent = "ERR: DIVISION BY 0"; //max chars 19
         errorFlag = 1;
         return;
     }
@@ -128,27 +128,51 @@ function printErrorDialogue(flag) {
             break;
         case 3:
             topDisplay.textContent = "SOME THINGS YOU CAN'T UNDO";
-            bottomDisplay.textContent = "REPENT AND BE CHANGED";
+            bottomDisplay.textContent = "REFORM AND REPENT";
             break;
         case 4:
             topDisplay.textContent = "QUIT WHILE YOU'RE AHEAD";
             bottomDisplay.textContent = "DON'T BE FOOLISH";
             break;
         case 5:
-            topDisplay.textContent = "QUI% WHILE Y%U'RE AHE^D";
-            bottomDisplay.textContent = "DON'T #E FOOLISH";
+            topDisplay.textContent = "  ,QUI% WHILE Y%U'RE AHE^D";
+            bottomDisplay.textContent = "   DON'T #E+FOOLISH";
             break;
         case 6:
-            topDisplay.textContent = "$UI^ W*ILE Y)U'RE AHE%D";
-            bottomDisplay.textContent = "DO^'T %E FO$LIS*";
+            topDisplay.textContent = "  ,$UI^ W*ILE=Y)U'RE AHE%D";
+            bottomDisplay.textContent = "   DO^'T %E+FO$LIS*";
             break;
         case 7:
-            topDisplay.textContent = "&UI# W^I!E Y%U/RE$*HE^D";
-            bottomDisplay.textContent = "DO/%T #E FO$(IS%";
+            topDisplay.textContent = "9 ,&UI# W^I!E=Y%U/RE$*HE^D";
+            bottomDisplay.textContent = "  ~DO/%T #E FO$(IS%";
             break;
         case 8:
-            topDisplay.textContent = "#U)^/W&I@E=Y,+%R-^)HE$D";
-            bottomDisplay.textContent = "_O=?T (E+#O&*IS.";
+            topDisplay.textContent = "9*,#U)^/W&I@E=Y,+%R-^)HE$D";
+            bottomDisplay.textContent = "< ~_O=?T (E+#O&*IS.";
+            break;
+            //                          PAX-sh $ ENTER AUTHCODE:
+        case 9:
+            topDisplay.textContent = "9*,AX)s/W$I@N=E, AR-H)HD$D";
+            bottomDisplay.textContent = "< ~_ =?  (E # &* S ";
+            break;
+        case 10:
+            topDisplay.textContent = " *,AX-s/ $I@N=ER AU-H)OD$:";
+            bottomDisplay.textContent = "  ~  =?  (  # &* S ";
+            break;
+        case 11:
+            topDisplay.textContent = "  ,AX-sh $ EN=ER AU-SCOD$:";
+            bottomDisplay.textContent = "     =?     # &    ";
+            break;
+        case 12:
+            topDisplay.textContent = "  ,AX-sh $ ENTER AUTHCODE:";
+            bottomDisplay.textContent = "      ?            ";
+            break;
+        case 13:
+            topDisplay.textContent = "  PAX-sh $ ENTER AUTHCODE:";
+            bottomDisplay.textContent = "                   ";
+            document.querySelector("#screen").style.color = "yellow";
+            document.querySelector("#screen").style.textShadow =
+                "0 0 4px lightgreen, 0 0 4px lightgreen, 0 0 20px lightgreen";
             break;
     };
 }

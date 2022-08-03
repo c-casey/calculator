@@ -80,17 +80,18 @@ body {
     box-shadow: 0 0 4px 1px #707070 inset;
     padding: 10px 30px;
     text-align: right;
-    font-family: 'Unica One', cursive;
+    font-family: 'JetBrains Mono', monospace;
     color: lightpink;
     text-shadow: 0 0 4px red, 0 0 4px red, 0 0 20px red;
+    white-space: pre;
 }
 
 #screen-top {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 #screen-bottom {
-    font-size: 28px;
+    font-size: 24px;
     bottom: 0;
 }
 
