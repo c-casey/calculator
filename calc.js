@@ -75,8 +75,8 @@ function migrateValues(operator) {
 }
 
 function replaceOperator(operator) {
+    topDisplay.textContent = topDisplay.textContent.replace(currentOperator, operator);
     currentOperator = operator;
-    topDisplay.textContent = topDisplay.textContent.replace(/[\*-\/\+]/, operator);
 }
 
 function displayOperation() {
